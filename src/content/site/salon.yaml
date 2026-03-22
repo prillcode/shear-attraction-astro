@@ -1,0 +1,18 @@
+name: Shear Attraction Salon
+tagline: Where beauty meets belonging.
+heroHeading: Welcome to Shear Attraction
+heroBody: >
+  Located in Maine Square Mall, Shear Attraction is more than a salon —
+  it's a space where you can relax, be yourself, and leave feeling radiant.
+  Our talented stylists bring creativity and care to every appointment.
+heroImage: /images/salon-hero.jpg
+address: 685 Hogan Rd, Bangor, ME 04401
+phone: "(207) 555-0100"
+email: hello@shearattractionsalon.com
+instagram: #
+facebook: https://facebook.com/shearattraction
+hours:
+  - day: Monday – Saturday
+    time: By appointment
+  - day: Sunday
+    time: Closed

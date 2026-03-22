@@ -1,0 +1,78 @@
+---
+import { getEntry } from 'astro:content';
+
+const salon = await getEntry('site', 'salon');
+const { name } = salon.data;
+
+const galleryImages = import.meta.glob('/public/images/gallery/*');
+const hasGallery = Object.keys(galleryImages).length > 0;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="font-display text-2xl text-beige hover:text-beige-dim transition-colors">
+        {name}
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/#stylists" class="nav-link text-text hover:text-beige transition-colors" data-section="stylists">Stylists</a>
+        {hasGallery && <a href="/#gallery" class="nav-link text-text hover:text-beige transition-colors" data-section="gallery">Gallery</a>}
+        <a href="/#contact" class="nav-link text-text hover:text-beige transition-colors" data-section="contact">Contact</a>
+        <a href="/weddings" class="rounded-full border border-green text-green hover:bg-green hover:text-bg font-medium px-4 py-2 transition-colors">
+          Weddings
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-text hover:text-beige transition-colors" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <a href="/#stylists" class="block py-2 text-text hover:text-beige transition-colors">Stylists</a>
+      {hasGallery && <a href="/#gallery" class="block py-2 text-text hover:text-beige transition-colors">Gallery</a>}
+      <a href="/#contact" class="block py-2 text-text hover:text-beige transition-colors">Contact</a>
+      <a href="/weddings" class="block py-2 text-green hover:text-green-light transition-colors">Weddings</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        navLinks.forEach(link => {
+          if ((link as HTMLElement).dataset.section === sectionId) {
+            link.classList.add('text-beige');
+            link.classList.remove('text-text');
+          } else {
+            link.classList.remove('text-beige');
+            link.classList.add('text-text');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('section[id]').forEach(section => {
+    observer.observe(section);
+  });
+</script>

@@ -1,0 +1,75 @@
+---
+interface Props {
+  stylist: {
+    name: string;
+    title: string;
+    photo?: string;
+    bio: string;
+    bookingUrl?: string;
+    bookingLabel?: string;
+    featuredServices: string[];
+  };
+}
+
+const { stylist } = Astro.props;
+const { name, title, photo = '/images/blank-headshot.jpg', bio, bookingUrl, bookingLabel = 'Book an Appointment', featuredServices } = stylist;
+---
+
+<article class="bg-surface rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow">
+  <div class="flex flex-col items-center text-center">
+    <div class="w-48 h-48 mb-4 rounded-xl overflow-hidden border border-beige-dim">
+      <img
+        src={photo}
+        alt={`${name} - ${title}`}
+        width="192"
+        height="192"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='/images/blank-headshot.jpg';"
+      />
+    </div>
+    
+    <h3 class="font-display text-2xl text-beige mb-1">{name}</h3>
+    <p class="font-body text-sm text-text-muted uppercase tracking-widest mb-4">{title}</p>
+    
+    <p class="font-body text-text mb-4 line-clamp-3 bio-text">{bio}</p>
+    <button class="read-more-btn text-green hover:text-green-light text-sm mb-4 hidden">Read more</button>
+
+    <div class="w-full mb-4">
+      <p class="font-body text-sm text-text-muted uppercase tracking-widest mb-2">Featured Services</p>
+      <ul class="space-y-1">
+        {featuredServices.map(service => (
+          <li class="font-body text-sm text-text flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0"></span>
+            {service}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {bookingUrl && (
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noopener"
+        class="rounded-full bg-green text-bg font-medium px-6 py-3 hover:bg-green-light transition-colors"
+      >
+        {bookingLabel}
+      </a>
+    )}
+  </div>
+</article>
+
+<script is:inline>
+  const card = document.currentScript.closest('article');
+  const bioText = card?.querySelector('.bio-text');
+  const readMoreBtn = card?.querySelector('.read-more-btn');
+
+  if (bioText && readMoreBtn && bioText.scrollHeight > bioText.clientHeight) {
+    readMoreBtn.classList.remove('hidden');
+    readMoreBtn.addEventListener('click', () => {
+      bioText.classList.toggle('line-clamp-3');
+      readMoreBtn.textContent = bioText.classList.contains('line-clamp-3') ? 'Read more' : 'Show less';
+    });
+  }
+</script>

@@ -1,0 +1,25 @@
+heading: Bridal & Wedding Services
+intro: >
+  Your wedding day deserves to be perfect. Cristy and her team bring expertise,
+  calm, and creativity to every celebration. A $50 travel + booking fee deposit required.
+contactName: Cristy
+contactNote: >
+  For bridal inquiries, reach out directly to Cristy.
+  She'll get back to you within 24 hours to discuss your vision and availability.
+packages:
+  - name: Hair Only
+    description: A hassle-free wedding day hair experience.
+    price: Starting at $75 per person
+    includes:
+      - Wedding day styling
+  - name: Hair & Make-up
+    description: Hair styling + professional make-up
+    price: Starting at $135 per person
+    includes:
+      - Wedding day styling
+      - Based on availability of contracted make-up artist
+  - name: Travel + Deposit
+    description: Required for your booking
+    price: $50 one-time fee
+    includes:
+      - Lock in your date today!

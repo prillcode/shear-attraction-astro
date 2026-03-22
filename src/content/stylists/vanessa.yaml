@@ -1,0 +1,13 @@
+name: Vanessa
+title: Master Stylist
+photo: /images/stylists/vanessa.jpg
+bio: >
+  Vanessa is an experienced stylist with a focus on men's cuts.
+bookingUrl: https://book.square.site/merchant/YOUR_ID/appointments
+bookingLabel: Book with Vanessa
+order: 4
+active: true
+featuredServices:
+  - Women's & Men's Cuts
+  - Color
+  - Full Highlights

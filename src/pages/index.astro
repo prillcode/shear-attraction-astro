@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import StylistCard from '../components/StylistCard.astro';
+import Gallery from '../components/Gallery.astro';
+import ContactBar from '../components/ContactBar.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const stylists = (await getCollection('stylists', s => s.data.active && s.data.display))
+  .sort((a, b) => a.data.order - b.data.order);
+
+Base;
+---
+
+<Base>
+  <Nav />
+  
+  <Hero />
+  
+  <section id="stylists" class="py-16 md:py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <h2 class="font-display text-4xl md:text-5xl text-beige text-center mb-16">Our Stylists</h2>
+      
+      <div class="flex flex-wrap justify-center gap-6">
+        {stylists.map(stylist => (
+          <div class="w-full sm:w-[340px]">
+            <StylistCard stylist={stylist.data} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <Gallery />
+  <ContactBar />
+</Base>
