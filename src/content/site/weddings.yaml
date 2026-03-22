@@ -11,13 +11,13 @@ packages:
     description: A hassle-free wedding day hair experience.
     price: Starting at $75 per person
     includes:
-      - Wedding day styling
+      - Wedding day styling by Cristy
   - name: Hair & Make-up
     description: Hair styling + professional make-up
     price: Starting at $135 per person
     includes:
-      - Wedding day styling
-      - Based on availability of contracted make-up artist
+      - Wedding day styling by Cristy
+      - Contracted professional make-up artist
   - name: Travel + Deposit
     description: Required for your booking
     price: $50 one-time fee
