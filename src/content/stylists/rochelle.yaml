@@ -2,13 +2,14 @@ name: Rochelle
 title: Master Stylist & Co-Owner
 photo: /images/stylists/rochelle.jpg
 bio: >
-  Rochelle is a creative stylist with 30+ years of salon experience.
-  Specializations include full color and cuts.
-bookingUrl: https://book.square.site/merchant/YOUR_ID/appointments
-bookingLabel: Book with Rochelle
+  Rochelle has 30+ years of salon experience.
+  Specializations include full color, perms, and cuts.
+#bookingUrl: 
+bookingLabel: Not accepting online
 order: 3
 active: true
 featuredServices:
-  - Women's Cut
-  - Men's Cut
-  - Cut & Color
+  - Full colors
+  - Perms
+  - Women's & Men's Cut
+  - Not accepting online appointments

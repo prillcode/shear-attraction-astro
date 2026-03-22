@@ -3,13 +3,12 @@ title: Master Stylist & Co-Owner
 photo: /images/stylists/cristy.jpg
 bio: >
   Cristy has been transforming hair and building confidence for over 20 years.
-  With a passion for color and an eye for what suits each individual, she creates
-  looks that feel as good as they look. Her specialty is balayage and bridal styling.
+  She specializes in foiling and bridal styling.
 bookingUrl: https://book.square.site/merchant/YOUR_ID/appointments
 bookingLabel: Book with Cristy
 order: 1
 active: true
 featuredServices:
-  - Women's & Men's Cut
-  - Cut & Color
+  - Foiling
   - Bridal Styling
+  - Women's & Men's Cut
