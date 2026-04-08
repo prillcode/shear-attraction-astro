@@ -1,0 +1,13 @@
+name: Anna
+title: Stylist
+photo: /images/stylists/anna.jpg
+bio: >
+  Anna is an experienced stylist competent in all styles and cuts
+#bookingUrl: 
+bookingLabel: Not yet accepting online
+order: 6
+active: true
+featuredServices:
+  - Women's & Men's Cuts
+  - Color
+  - Full Highlights

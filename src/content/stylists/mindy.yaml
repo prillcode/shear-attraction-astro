@@ -1,0 +1,13 @@
+name: Mindy
+title: Stylist
+photo: /images/stylists/mindy.jpg
+bio: >
+  Mindy is an experienced stylist competent in all styles and cuts
+#bookingUrl: 
+bookingLabel: Not yet accepting online
+order: 5
+active: true
+featuredServices:
+  - Women's & Men's Cuts
+  - Color
+  - Full Highlights
