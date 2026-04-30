@@ -4,10 +4,10 @@ photo: /images/stylists/vanessa.jpg
 bio: >
   Vanessa is an experienced stylist with a focus on men's cuts.
 bookingUrl: https://book.squareup.com/appointments/0e1y95wrvd9vg8/location/LBSAWDBC56RST/services
-bookingLabel: Book with Vanessa
+bookingLabel: Existing Client Booking
 order: 4
 active: true
 featuredServices:
   - Women's & Men's Cuts
-  - Color
-  - Full Highlights
+  - Color & Full Highlights
+  - Not currently accepting new clients
